@@ -2,78 +2,58 @@
 
 import {useLoaderData} from 'react-router-dom'
 import Cliente from '../components/Cliente';
+import { useEffect, useState } from 'react';
+import { obtenerDatos } from '../apiServices/apiServices';
 
-export const loader = () => {
- const clientes = [
-    {
-        id: 1,
-        nombre: 'Juan',
-        telefono: 102013313,
-        email: "juan@juan.com",
-        empresa: 'Codigo Con Juan'
-    },
-    {
-        id: 2,
-        nombre: 'Karen',
-        telefono: 138198313,
-        email: "karen@juan.com",
-        empresa: 'Codigo Con Juan'
-    },
-    {
-        id: 3,
-        nombre: 'Josue',
-        telefono: 31983913,
-        email: "josue@juan.com",
-        empresa: 'Codigo Con Juan'
-    },
-    {
-        id: 4,
-        nombre: 'Miguel',
-        telefono: 319381983,
-        email: "miguel@juan.com",
-        empresa: 'Codigo Con Juan'
-    },
-    {
-        id: 5,
-        nombre: 'Pedro',
-        telefono: 1398198938,
-        email: "pedro@juan.com",
-        empresa: 'Codigo Con Juan'
-    },
-  ];
-  return clientes;
-}
+import fondoPrincipal from '../img/plaza-24-Septiembre.jpg';
+
 
 
 const Index = () => {
 
-  const clientes = useLoaderData()
+  const[datos,setDatos] =useState([])
 
-  console.log(clientes);
+  useEffect(()=>{
+    const getDatos = async()=>{
+      try{
+        const getDatoPrincipal = await obtenerDatos();
+        setDatos(getDatoPrincipal);
+      }catch{
+        console.log('error');
+      }
+    }
+
+    getDatos();
+  },[])
+
+  // const datos = useLoaderData()
+
+  console.log(datos);
 
   return (
-    <>
+    <div className="relative bg-cover w-full" style={{ backgroundImage: `url(${fondoPrincipal})`, backgroundSize: 'cover' }}>
       <h1 className="font-black text-4xl text-color-green-oficial">Denuncias</h1>
       <p className="mt-3">Administra las denuncias</p>
       
       {
-        clientes.length ? (
-          <table className='w-full bg-white shadow mt-5 table-auto'> 
-              <thead className='bg-color-green-oficial text-white'>
+        datos.length ? (
+          <table className='w-full bg-white shadow mt-5 table-auto '> 
+              <thead className='bg-color-green-oficial bg-opacity-50 text-white py-5'>
                   
                   <tr>
-                    <th className='p-2'>Clientes</th>
-                    <th className='p-2'>Contacto</th>
-                    <th className='p-2'>Acciones</th>
+                    <th className='p-2'>Título</th>
+                    <th className='p-2'>Descripción</th>
+                    <th className='p-2'>Más Detalles</th>
                   </tr>
               </thead>
 
 
+
               <tbody>
-                {clientes.map(cliente =>(
+                {datos.map(dato =>(
                   <Cliente 
-                    cliente = {cliente}
-                    key = {cliente.id}
+                    datos={dato}
+                    key={dato.id}
                   />
 
                 ))}
@@ -85,7 +65,7 @@ const Index = () => {
         )
       }
 
-    </>
+    </div>
   )
 }
 
