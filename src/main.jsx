@@ -36,8 +36,8 @@ const router = createBrowserRouter([
             // element: <NuevoCLiente />
           },
           {
-          //   path: 'detalle/:id/policia',
-          //   element: <DatoPoliciaCompleto/>
+            path: 'detalle/:id/policia',
+            element: <DatoPoliciaCompleto/>
           },
           
         ]
@@ -50,7 +50,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <App /> */}
     {/* <Login/> */}
     <RouterProvider router = {router}/>
-    {/* <DatosClienteCompleto/> */}
+    {/* <DatoPoliciaCompleto/> */}
      {/* <Mapa/> */}
      {/* <DatoPoliciaCompleto/> */}
 

@@ -1,67 +1,8 @@
-// import GoogleMaps, { Marker } from 'simple-react-google-maps';
 
-
-
-// const Mapa = ({ latitude, longitude }) => {
-//   return (
-//     <div className='w-full flex justify-center items-center'>
-//       <GoogleMaps
-//         apiKey={"AIzaSyAgJYJtIalXPGUMFsjqYvmxPSVUARIPG4A"}
-//         style={{ height: "500px", width: "800px" }}
-//         zoom={10}
-//         center={{
-//           // lat: latitude,
-//           // lng: longitude,
-//           lat: -17.77647711658589,
-//           lng: -63.195227430692064,
-//         }}
-//       >
-   
-        
-//         <Marker
-//           lat={latitude}
-//           lng={longitude}
-//           label="Mi Ubicación"
-//         />
-          
-//       </GoogleMaps>
-//     </div>
-//   );
-// };
-
-// export default Mapa;
-
-
-//-----------------------------------
-
-
-
-// import GoogleMapReact, { Marker } from 'google-map-react';
-
-// const Mapa = ({ latitude, longitude }) => {
-//   return (
-//     <div className='w-full flex justify-center items-center'>
-//       <GoogleMapReact
-//         bootstrapURLKeys={{ key: "AIzaSyAgJYJtIalXPGUMFsjqYvmxPSVUARIPG4A" }}
-//         defaultCenter={{
-//           lat: -17.77647711658589,
-//           lng: -63.195227430692064,
-//         }}
-//         defaultZoom={10}
-//       >
-//         <Marker
-//           lat={latitude}
-//           lng={longitude}
-//           text="Mi Ubicación"
-//         />
-//       </GoogleMapReact>
-//     </div>
-//   );
-// };
-
-// export default Mapa;
 
 import React, { useEffect, useState } from 'react';
+
+import marker from '../img/Tracking.png'
 
 const Mapa = ({ latitude,longitude }, apiKey="AIzaSyAgJYJtIalXPGUMFsjqYvmxPSVUARIPG4A") => {
   const [map, setMap] = useState(null);
@@ -97,19 +38,22 @@ const Mapa = ({ latitude,longitude }, apiKey="AIzaSyAgJYJtIalXPGUMFsjqYvmxPSVUAR
     }
   }, [map, markers]);
 
-  
+  -17.78288920100964, -63.182137684648815
   const initMap = () => {
     const newMap = new window.google.maps.Map(document.getElementById('map'), {
       zoom: 17,
-      center: { lat: latitude, lng: longitude},
+      // center: { lat: latitude, lng: longitude},
+      center: { lat: -17.78288920100964, lng: -63.182137684648815},
     });
 
     setMap(newMap);
 
     const newMarkers = [
       {
-        position: { lat: latitude, lng: longitude },
-        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+        // position: { lat: latitude, lng: longitude },
+        position: { lat: -17.78288920100964, lng: -63.182137684648815 },
+        // icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+        icon: {marker}
       },
       // Puedes agregar más marcadores según sea necesario
     ];

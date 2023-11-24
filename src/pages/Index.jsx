@@ -41,9 +41,9 @@ const Index = () => {
               <thead className='bg-color-green-oficial bg-opacity-50 text-white py-5'>
                   
                 <tr>
-                    <th className='p-2'>Título</th>
-                    <th className='p-2'>Descripción</th>
-                    <th className='p-2'>Más Detalles</th>
+                    <th className='p-2 text-2xl'>Título</th>
+                    <th className='p-2 text-2xl'>Descripción</th>
+                    <th className='p-2 text-2xl'>Más Detalles</th>
                   </tr>
                 </thead>
 

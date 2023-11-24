@@ -30,10 +30,10 @@ const IndexPolicia = () => {
       {datos.length ? (
         <table className='w-full bg-white shadow mt-5 table-auto'>
           <thead className='bg-color-green-oficial bg-opacity-50 text-white py-5'>
-            <tr>
+            <tr className='text-2xl'>
               <th className='p-2'>Nombre</th>
               <th className='p-2'>Responsable</th>
-              <th className='p-2'>Numero</th>
+              <th className='p-2'>Número</th>
               <th className='p-2'>Mas Detalles</th>
             </tr>
           </thead>
@@ -43,7 +43,6 @@ const IndexPolicia = () => {
               <NombrePolicia
                 datos = {dato}
                 key={dato.id}
-                
               />
             ))}
           </tbody>

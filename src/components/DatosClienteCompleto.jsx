@@ -29,7 +29,7 @@ const DatosClienteCompleto = () => {
         if (datoSeleccionado) {
           setTitulo(datoSeleccionado.title);
           setFoto(datoSeleccionado.image)
-          setDescripcion(datoSeleccionado.idType);
+          setDescripcion(datoSeleccionado.description);
 
           if(Number(datoSeleccionado.idType) === 1){
             setTipoRobo("Icendio");

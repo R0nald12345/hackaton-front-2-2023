@@ -13,7 +13,7 @@ const Cliente = ({ datos }) => {
             </td>
 
             <td className="p-6">
-                <p className="text-gray-800">{description}</p>
+                <p className="text-gray-800 text-2xl">{description}</p>
             </td>
 
             <td className="p-6 flex gap-3 flex justify-center items-center">

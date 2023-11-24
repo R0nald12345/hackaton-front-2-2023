@@ -1,6 +1,7 @@
 import {Outlet,Link,useLocation} from 'react-router-dom'
 import escudo from '../img/Escudo.png'
 import iconoPolice from '../img/Police.png'
+import tracking from '../img/Tracking.png'
 
 
 import denuncia from '/iconoDenuncia.svg';
@@ -32,22 +33,24 @@ const Layout = () => {
                         Denuncias
                     </Link>
 
-                    <Link className={`${location.pathname === 'vecino/lista' ? 'text-blue-300' : 'text-white' } font-extrabold  text-2xl block mt-2 hover:text-blue-300 text-white pl-5 flex gap-2`} 
-                    to='/clientes/nuevo'>
-                        <img
-                            src={iconoVecino}
-                            alt='icono Denuncia'
-                        />
-                        Vecinos
-                    </Link>
+                    
 
-                    <Link className={`${location.pathname === 'centropolicial/lista' ? 'text-blue-300' : 'text-white' } font-extrabold  text-2xl block mt-2 hover:text-blue-300 text-white px-5 flex gap-2`} 
+                    <Link className={`${location.pathname === 'centropolicial/lista' ? 'text-blue-300' : 'text-white' } font-extrabold  text-2xl block mt-2 hover:text-blue-300 text-white px-5 flex gap-2 mb-2`} 
                         to='control/policial'>
                         <img
                             src={iconoPolice}
                             alt='icono Denuncia'
                         />   
                             Control Policial
+                    </Link>
+
+                    <Link className={`${location.pathname === 'vecino/lista' ? 'text-blue-300' : 'text-white' } font-extrabold  text-2xl block mt-2 hover:text-blue-300 text-white pl-3 flex gap-2 mb-2`} 
+                    to='/clientes/nuevo'>
+                        <img
+                            src={tracking}
+                            alt='icono Denuncia'
+                        />
+                        Traking
                     </Link>
 
                 </nav>
