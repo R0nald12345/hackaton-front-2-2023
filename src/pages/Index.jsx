@@ -32,12 +32,12 @@ const Index = () => {
 
   return (
     <div className="relative bg-cover w-full" style={{ backgroundImage: `url(${fondoPrincipal})`, backgroundSize: 'cover' }}>
-      <h1 className="font-black text-4xl text-color-green-oficial">Denuncias</h1>
-      <p className="mt-3">Administra las denuncias</p>
+      <h1 className="font-black text-4xl text-color-green-oficial text-center mt-3">Denuncias</h1>
+      <p className="mt-3 text-center font-semibold">Administra las denuncias</p>
       
       {
         datos.length ? (
-          <table className='w-full bg-white shadow mt-5 table-auto '> 
+          <table className='w-full bg-white shadow mt-5 table-auto'> 
               <thead className='bg-color-green-oficial bg-opacity-50 text-white py-5'>
                   
                   <tr>
@@ -49,7 +49,7 @@ const Index = () => {
 
 
 
-              <tbody>
+              <tbody className='rounded-lg'>
                 {datos.map(dato =>(
                   <Cliente 
                     datos={dato}

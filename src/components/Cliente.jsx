@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 
 import iconoObservar from '/iconoObservar.svg';
 
+
 const Cliente = ({ datos }) => {
     const { id, title, description } = datos;
 
     return (
-        <tr key={id} className="border-b text-center">
-            <td className='p-6 space-y-2'>
+        <tr key={id} className="border-2 text-center bg-transparent">
+            <td className=''>
                 <p className="text-2xl text-gray-800">{title}</p>
             </td>
 

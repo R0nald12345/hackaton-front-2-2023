@@ -28,10 +28,14 @@ const router = createBrowserRouter([
             path: 'detalle/:id/denuncia',
             element: <DatosClienteCompleto/>
           },
-          // {
-          //   path: '/clientes/nuevo',
-          //   element: <NuevoCLiente />
-          // },
+          {
+            path: 'vecino/lista',
+            // element: <NuevoCLiente />
+          },
+          {
+            path: 'centropolicial/lista',
+            // element: <NuevoCLiente />
+          },
           
         ]
   },
