@@ -13,4 +13,15 @@ export const obtenerDatos = async () => {
     }
   };
   
+
+  export const obtenerDatosPolicia = async () => {
+    try {
+      const baseUrl = import.meta.env.VITE_API_BASE_URL;
+      const url = baseUrl + "/users/policias";
+      const datos = await axios.get(url);
+      return datos.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
   

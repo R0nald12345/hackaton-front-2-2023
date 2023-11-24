@@ -10,6 +10,8 @@ import Mapa from './Mapa/Mapa.jsx'
 
 import Login from './components/Login.jsx'
 import DatosClienteCompleto from './components/DatosClienteCompleto.jsx'
+import DatoPoliciaCompleto from './components/DatoPoliciaCompleto.jsx'
+import IndexPolicia from './pages/IndexPolicia.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,12 +31,13 @@ const router = createBrowserRouter([
             element: <DatosClienteCompleto/>
           },
           {
-            path: 'vecino/lista',
+            path: 'control/policial',
+            element: <IndexPolicia/>
             // element: <NuevoCLiente />
           },
           {
-            path: 'centropolicial/lista',
-            // element: <NuevoCLiente />
+          //   path: 'detalle/:id/policia',
+          //   element: <DatoPoliciaCompleto/>
           },
           
         ]
@@ -48,8 +51,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Login/> */}
     <RouterProvider router = {router}/>
     {/* <DatosClienteCompleto/> */}
-
      {/* <Mapa/> */}
+     {/* <DatoPoliciaCompleto/> */}
 
   </React.StrictMode>,
 )

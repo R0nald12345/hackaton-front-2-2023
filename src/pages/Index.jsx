@@ -40,12 +40,12 @@ const Index = () => {
           <table className='w-full bg-white shadow mt-5 table-auto'> 
               <thead className='bg-color-green-oficial bg-opacity-50 text-white py-5'>
                   
-                  <tr>
+                <tr>
                     <th className='p-2'>Título</th>
                     <th className='p-2'>Descripción</th>
                     <th className='p-2'>Más Detalles</th>
                   </tr>
-              </thead>
+                </thead>
 
 
 
@@ -56,6 +56,7 @@ const Index = () => {
                     key={dato.id}
                   />
 
+                  
                 ))}
               </tbody>
                 

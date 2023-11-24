@@ -22,7 +22,8 @@ const Layout = () => {
                 </div>
 
                 <nav className='mt-10'>
-                    <Link className={`${location.pathname === '/inicio/principal' ? 'text-black bg-yellow-500' : 'text-white' } rounded-lg font-extrabold text-2xl block mt-2  hover:text-blue-300 text-white pl-5 py-2 flex gap-2`} 
+                        
+                    <Link className={`${location.pathname === '/inicio/principal' ? 'text-black bg-yellow-500' : 'text-white' } rounded-lg font-extrabold md:text-2xl block mt-2  hover:text-blue-300 text-white pl-5 py-2 flex gap-2`} 
                     to='/'>
                         <img
                             src={denuncia}
@@ -41,7 +42,7 @@ const Layout = () => {
                     </Link>
 
                     <Link className={`${location.pathname === 'centropolicial/lista' ? 'text-blue-300' : 'text-white' } font-extrabold  text-2xl block mt-2 hover:text-blue-300 text-white px-5 flex gap-2`} 
-                        to='/clientes/nuevo'>
+                        to='control/policial'>
                         <img
                             src={iconoPolice}
                             alt='icono Denuncia'

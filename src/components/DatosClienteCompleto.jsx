@@ -29,11 +29,21 @@ const DatosClienteCompleto = () => {
         if (datoSeleccionado) {
           setTitulo(datoSeleccionado.title);
           setFoto(datoSeleccionado.image)
-          setDescripcion(datoSeleccionado.description);
-          setTipoRobo(datoSeleccionado.idType);
+          setDescripcion(datoSeleccionado.idType);
+
+          if(Number(datoSeleccionado.idType) === 1){
+            setTipoRobo("Icendio");
+          }
+          
+          if(Number(datoSeleccionado.idType) === 2){
+            setTipoRobo("Accidente");
+          }
+          
+          if(Number(datoSeleccionado.idType) === 3){
+            setTipoRobo("Robo");
+          }
           setLatitude(datoSeleccionado.latitude);
           setlogitude(datoSeleccionado.longitude);
-          // ... actualiza los demás estados con los campos relevantes
         }
 
         setDatos(data);
@@ -51,7 +61,7 @@ const DatosClienteCompleto = () => {
 
   return (
     <div className="flex justify-center items-center">
-        <form className="w-full p-7 shadow-lg rounded-lg">
+        <form className="w-full p-7 shadow-lg rounded-lg bg-slate-200 rounded-lg shadow-lg">
 
             <h2 className="font-extrabold text-3xl text-center mb-5">
               {titulo}
@@ -69,13 +79,13 @@ const DatosClienteCompleto = () => {
 
 
               <div className="md:w-3/4">
-                <p className="font-extrabold mb-1 mt-3 md:mt-0">Descripcion</p>
+                <p className="font-extrabold mb-1 mt-3 md:mt-0">Descripción</p>
                 <textarea 
-                  className="w-full rounded-lg p-2 border-2 border-black"
+                  className="w-full rounded-lg p-2 border-2 border-black font-semibold shadow-xl"
                   defaultValue={descripcion}
                 />
-                <p className="font-extrabold mt-3 mb-1">Tipo de robo</p>
-                <p className="rounded-lg p-2 border-2 border-black">{tipoRobo}</p>
+                <p className="font-extrabold mt-3 mb-1">Tipo de Robo</p>
+                <p className="rounded-lg p-2 border-2 border-black bg-white font-semibold shadow-xl">{tipoRobo}</p>
               </div>
 
             </section>
@@ -84,6 +94,7 @@ const DatosClienteCompleto = () => {
               <p className="font-extrabold mb-2">Lugar de la Denuncia</p>
               <div className="w-full rounded-lg mb-5 "> 
                 <Mapa 
+                  // key={}
                   latitude = {latitude}
                   longitude= {longitude}
                 />
